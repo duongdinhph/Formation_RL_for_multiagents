@@ -1,1 +1,1 @@
-# Formation_RL_for_multiagents
+# Formation control scheme with Reinforcement Learning for Multiple Surface vehicles
