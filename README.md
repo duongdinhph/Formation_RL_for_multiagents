@@ -14,8 +14,7 @@ $$\dot{\bar{p_j}} = h_j h_j^T f_j, \\ $$
 The high-level displacement-based formation control protocol can be implemented for each SV:
 $$\dot{\bar{x_j}} = \bar{v_j} cos \bar{\psi_j}, $$
 $$\dot{\bar{y_j}} = \bar{v_j} sin \bar{\psi_j}, $$
-$$\dot{\bar{x_j}} = \bar{v_j} cos \bar{\psi_j}, $$
-$$\dot{\bar{y_j}} = \bar{v_j} sin \bar{\psi_j}, $$
+$$\bar{v_j} = [cos \bar{\psi_j}, sin \bar{\psi_j}](-(\mathcal{L} \otimes I)(\bar{p_j} - \bar{p_j}^*)), $$
 # 1.2. The high-level displacement-based controller
 The HJB equation:
 $$ H\left(X_i,u_i^*,\frac{{\partial {V_i^*}}}{{\partial X_i}}\right)=r(X_i(\tau ),{u_i^*}(\tau )) + \frac{{\partial {V_i^*}}}{{\partial X_i}}(K_i(X_i) + L_i(X_i){u_i^*}) = 0 $$
