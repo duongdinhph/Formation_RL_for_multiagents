@@ -3,26 +3,20 @@ A combination of formation control and optimal control based on reinforcement le
 Full report: [link](https://drive.google.com/drive/folders/1O79KVI5BtS4bu3oG9LMU0cJH48o4lHXR)
 
 # Introduction
-In this project, the optimal tracking control problem (OTCP) for the quadrotor which is a highly coupling system with completely unknown dynamics is addressed based on data by introducing the
-reinforcement learning (RL) technique. The proposed Off-policy RL algorithm does not need any
-knowledge of the quadrotor model. By collecting data, which is the states and control inputs of the quadrotor system, then
-using an actor-critic network (NNs) to approximate the optimal controller, OTCP for the quadrotor is resolved. Finally,
-simulation results are provided to illustrate the effectiveness of the proposed method.
+This article presents a comprehensive approach to integrating formation tracking control and optimal control for a fleet of multiple surface vehicles (SVs), accounting for both kinematic and dynamic models of each SV agent. The proposed control framework comprises two core components: a high-level displacement-based formation controller and a low-level reinforcement learning (RL)-based optimal control strategy for individual SV agents. The high-level formation control law, employing a modified gradient method, is introduced to guide the SVs in achieving desired formations. Meanwhile, the low-level control structure, featuring time-varying references, incorporates the RL algorithm by transforming the time-varying closed agent system into an equivalent autonomous system. The application of Lyapunov’s direct approach, along with the existence of the Bellman function, guarantees the stability and optimality of the proposed design. Through extensive numerical simulations, encompassing various comparisons and scenarios, this study demonstrates the efficacy of the novel formation control strategy for multiple SV agent systems, showcasing its potential for real-world applications.
+# 1. The proposed control scheme
+<img width="544" alt="control_scheme" src="https://github.com/duongdinhph/Formation_RL_for_multiagents/assets/56771011/7090a2ba-3d5e-4ebe-8ce4-9b1e9ccee398">
 
-# 1. Problem Statement
-![quad_schematic](https://github.com/duongdinhph/OTCP_Quad/assets/56771011/9de3f13d-e145-4d17-8df4-7d9a2c6e777b)
+# 1.1. The high-level displacement-based controller
+The high-level formation control law, employing a modified gradient method, translates the desired formation and trajectory into individual reference trajectories that are feasible.
+    \begin{equation}
+    \label{equa9}
+        \begin{cases}
+         \Dot{\Bar{p_j}} = h_j h_j^T f_j, \\
+         \Dot{h_j} = (I - h_j h_j^T) f_j, j \in S  
+        \end{cases}
+    \end{equation}
 
-In this section, we present the model of the quadrotor and the traditional control scheme. A quadrotor could be described with dynamic equations: $m = T_p R e_{3,3} - m g e_{3,3} $
-
-Where: 
-The position of the center of mass is $p = [p_x,p_y,p_z]^T \in \mathbb{R}^3$. The Euler angles $\Theta = [\phi, \theta, \psi]$. $e_{i,j}$ is the vector which has $i$ numbers of zeros except for number 1 in the $j^{th}$ position.
-
-# 2. Proposed Control Strategy
-![Quad_Control_Diagram](https://github.com/duongdinhph/OTCP_Quad/assets/56771011/306f37f3-1ca5-46a6-9e22-f797f3e7797e)
-  ## 2.1. Position Controller with Off-policy RL
-  
-  ## 2.2. Attitude Controller with Off-policy RL
-  
 # 3. Simulation
 ![3D_tracking_skew](https://github.com/duongdinhph/OTCP_Quad/assets/56771011/5f818f3d-f018-494b-a6ec-4f97d2e55295)
 
