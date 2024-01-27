@@ -15,6 +15,7 @@ The high-level displacement-based formation control protocol can be implemented 
 $$\dot{\bar{x_j}} = \bar{v_j} cos \bar{\psi_j}, $$
 $$\dot{\bar{y_j}} = \bar{v_j} sin \bar{\psi_j}, $$
 $$\bar{\omega_j} = (-sin \bar{\psi_j},cos \bar{\psi_j})(-( \mathcal{L} \otimes I)(\bar{p_j} - \bar{p_j}^*)) $$
+$$\bar{\omega_j} = (-sin \bar{\psi_j},cos \bar{\psi_j})(-( \mathcal{L} \otimes I)(\bar{p_j} - \bar{p_j}^*)) $$
 
 # 1.2. The high-level displacement-based controller
 The HJB equation:
