@@ -11,8 +11,18 @@ This article presents a comprehensive approach to integrating formation tracking
 The high-level formation control law, employing a modified gradient method, translates the desired formation and trajectory into individual reference trajectories that are feasible.
 $$\dot{\bar{p_j}} = h_j h_j^T f_j, \\ $$
          $$\dot{h_j} = (I - h_j h_j^T) f_j, j \in S $$
+The high-level displacement-based formation control protocol can be implemented for each SV:
+$$\dot{\bar{x_j}} = \bar{v_j} cos \bar{\psi_j}, $$
+$$\dot{\bar{y_j}} = \bar{v_j} sin \bar{\psi_j}, $$
+$$\bar{v_j} = [cos \bar{\psi_j}, sin \bar{\psi_j}](-(\mathcal{L} \otimes I)(\bar{p_j} - \bar{p_j}^*)), $$
+$$\bar{\omega_j} = [-sin \bar{\psi_j},cos \bar{\psi_j}](-(\mathcal{L} \otimes I)(\bar{p_j} - \bar{p_j}^*)) $$
 
-
+# 1.2. The high-level displacement-based controller
+The HJB equation:
+$$ H\left(X_i,u_i^*,\frac{{\partial {V_i^*}}}{{\partial X_i}}\right)=r(X_i(\tau ),{u_i^*}(\tau )) + \frac{{\partial {V_i^*}}}{{\partial X_i}}(K_i(X_i) + L_i(X_i){u_i^*}) = 0 $$
+We approximate the Bellman function and the optimal controller using a critic NN and an actor NN:
+$$\widehat V_i(X_i) = {\widehat {W}_{ci}}^T \Psi_i (X_i) $$
+$$\widehat u_i(X_i) =  - \frac{1}{2}{R^{ - 1}}{G_i^T}(X_i){(\frac{{\partial \Psi_i }}{{\partial x_i}})^T}{\widehat {W}_{ci}} $$
 # 3. Simulation
 ![3D_tracking_skew](https://github.com/duongdinhph/OTCP_Quad/assets/56771011/5f818f3d-f018-494b-a6ec-4f97d2e55295)
 
