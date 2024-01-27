@@ -9,13 +9,9 @@ This article presents a comprehensive approach to integrating formation tracking
 
 # 1.1. The high-level displacement-based controller
 The high-level formation control law, employing a modified gradient method, translates the desired formation and trajectory into individual reference trajectories that are feasible.
-    \begin{equation}
-    \label{equa9}
-        \begin{cases}
-         \Dot{\Bar{p_j}} = h_j h_j^T f_j, \\
-         \Dot{h_j} = (I - h_j h_j^T) f_j, j \in S  
-        \end{cases}
-    \end{equation}
+$\Dot{\Bar{p_j}} = h_j h_j^T f_j, \\
+         \Dot{h_j} = (I - h_j h_j^T) f_j, j \in S $
+
 
 # 3. Simulation
 ![3D_tracking_skew](https://github.com/duongdinhph/OTCP_Quad/assets/56771011/5f818f3d-f018-494b-a6ec-4f97d2e55295)
