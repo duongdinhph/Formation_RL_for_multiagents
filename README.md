@@ -19,7 +19,7 @@ After that, we can obtain the desired trajectory for the low-level controller by
 
 # 2.2. Low-level RL-based control design for each SV
 We approximate the Bellman function and the Optimal controller using a critic NN and an actor NN:
-$$\widehat V_i(X_i) &= {\widehat {W}_{ci}}^T\Psi_i (X_i)$$
+$$\widehat V_i(X_i) = {\widehat {W}_{ci}}^T\Psi_i (X_i)$$
 
 
 
