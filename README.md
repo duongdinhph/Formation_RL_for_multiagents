@@ -14,7 +14,6 @@ $$\dot{h_j} = (I - h_j h_j^T) f_j, j \in S $$
 The high-level displacement-based formation control protocol can be implemented for each SV:
 $$\dot{\bar{x_j}} = \bar{v_j} cos \bar{\psi_j}$$
 $$\dot{\bar{y_j}} = \bar{v_j} sin \bar{\psi_j}$$
-$$\bar{v_j} = [cos \bar{\psi_j}, sin \bar{\psi_j}](-(\mathcal{L} \otimes I)(\bar{p_j} - \bar{p_j}^*))$$
 $$\bar{\omega_j} = [-sin \bar{\psi_j},cos \bar{\psi_j}](-(\mathcal{L} \otimes I)(\bar{p_j} - \bar{p_j}^*))$$
 # 1.2. The low-level displacement-based controller
 
