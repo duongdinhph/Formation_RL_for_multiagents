@@ -9,12 +9,14 @@ This article presents a comprehensive approach to integrating formation tracking
 
 # 1.1. The high-level displacement-based controller
 The high-level formation control law, employing a modified gradient method, translates the desired formation and trajectory into individual reference trajectories that are feasible.
-$$\dot{\bar{p_j}} = h_j h_j^T f_j, \\ $$
+$$\dot{\bar{p_j}} = h_j h_j^T f_j,$$
 $$\dot{h_j} = (I - h_j h_j^T) f_j, j \in S $$
 The high-level displacement-based formation control protocol can be implemented for each SV:
 $$\dot{\bar{x_j}} = \bar{v_j} cos \bar{\psi_j}$$
 $$\dot{\bar{y_j}} = \bar{v_j} sin \bar{\psi_j}$$
 $$\bar{v_j} = [cos \bar{\psi_j}, sin \bar{\psi_j}](-(\mathcal{L} \otimes I)(\bar{p_j} - \bar{p_j}^*))$$
+$$\bar{\omega_j} = [-sin \bar{\psi_j},cos \bar{\psi_j}](-(\mathcal{L} \otimes I)(\bar{p_j} - \bar{p_j}^*))$$
+
 
 
 
